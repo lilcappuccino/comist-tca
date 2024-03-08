@@ -90,3 +90,5 @@ fastlane/test_output
 iOSInjectionProject/
 .DS_Store
 Comist.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+Comist/Core/AppConfig.xcconfig
+Comist/Core/GoogleService-Info.plist

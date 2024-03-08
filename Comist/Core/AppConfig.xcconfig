@@ -1,0 +1,15 @@
+//
+//  AppConfig.xcconfig
+//  Comist
+//
+//  Created by Vadim Marchenko on 08.03.2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+// App store config
+APP_NAME = Comist
+PRODUCT_BUNDLE_IDENTIFIER = com.lilcappucc.Comist
+APP_TEAM = Y7693M9CNF
+
+

@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85BA3AC92B9B504200132F5C /* AppConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85BA3AC82B9B504200132F5C /* AppConfig.xcconfig */; };
+		85BA3ACC2B9B563500132F5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85BA3ACB2B9B563500132F5C /* GoogleService-Info.plist */; };
+		85BA3ACF2B9B567E00132F5C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 85BA3ACE2B9B567E00132F5C /* FirebaseStorage */; };
+		85BA3AD12B9B576900132F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BA3AD02B9B576900132F5C /* AppDelegate.swift */; };
 		85DBFEA62B9B42B500BF2DFC /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 85DBFEA52B9B42B500BF2DFC /* ComposableArchitecture */; };
 		85FFD6922B9B419D00264B33 /* ComistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFD6912B9B419D00264B33 /* ComistApp.swift */; };
 		85FFD6942B9B419D00264B33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFD6932B9B419D00264B33 /* ContentView.swift */; };
 		85FFD6962B9B419F00264B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85FFD6952B9B419F00264B33 /* Assets.xcassets */; };
 		85FFD6992B9B419F00264B33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85FFD6982B9B419F00264B33 /* Preview Assets.xcassets */; };
 		85FFD6A32B9B419F00264B33 /* ComistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFD6A22B9B419F00264B33 /* ComistTests.swift */; };
-		85FFD6AD2B9B419F00264B33 /* ComistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFD6AC2B9B419F00264B33 /* ComistUITests.swift */; };
-		85FFD6AF2B9B419F00264B33 /* ComistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFD6AE2B9B419F00264B33 /* ComistUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,16 +27,13 @@
 			remoteGlobalIDString = 85FFD68D2B9B419D00264B33;
 			remoteInfo = Comist;
 		};
-		85FFD6A92B9B419F00264B33 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 85FFD6862B9B419D00264B33 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 85FFD68D2B9B419D00264B33;
-			remoteInfo = Comist;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		85BA3AC82B9B504200132F5C /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
+		85BA3ACA2B9B50C800132F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85BA3ACB2B9B563500132F5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		85BA3AD02B9B576900132F5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85FFD68E2B9B419D00264B33 /* Comist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85FFD6912B9B419D00264B33 /* ComistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComistApp.swift; sourceTree = "<group>"; };
 		85FFD6932B9B419D00264B33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,9 +41,6 @@
 		85FFD6982B9B419F00264B33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85FFD69E2B9B419F00264B33 /* ComistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85FFD6A22B9B419F00264B33 /* ComistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComistTests.swift; sourceTree = "<group>"; };
-		85FFD6A82B9B419F00264B33 /* ComistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85FFD6AC2B9B419F00264B33 /* ComistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComistUITests.swift; sourceTree = "<group>"; };
-		85FFD6AE2B9B419F00264B33 /* ComistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComistUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85DBFEA62B9B42B500BF2DFC /* ComposableArchitecture in Frameworks */,
+				85BA3ACF2B9B567E00132F5C /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,22 +60,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85FFD6A52B9B419F00264B33 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85BA3AC72B9B4FD500132F5C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				85BA3ACB2B9B563500132F5C /* GoogleService-Info.plist */,
+				85BA3ACA2B9B50C800132F5C /* Info.plist */,
+				85FFD6952B9B419F00264B33 /* Assets.xcassets */,
+				85BA3AC82B9B504200132F5C /* AppConfig.xcconfig */,
+				85BA3AD02B9B576900132F5C /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		85FFD6852B9B419D00264B33 = {
 			isa = PBXGroup;
 			children = (
 				85FFD6902B9B419D00264B33 /* Comist */,
 				85FFD6A12B9B419F00264B33 /* ComistTests */,
-				85FFD6AB2B9B419F00264B33 /* ComistUITests */,
 				85FFD68F2B9B419D00264B33 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,7 +89,6 @@
 			children = (
 				85FFD68E2B9B419D00264B33 /* Comist.app */,
 				85FFD69E2B9B419F00264B33 /* ComistTests.xctest */,
-				85FFD6A82B9B419F00264B33 /* ComistUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,9 +96,9 @@
 		85FFD6902B9B419D00264B33 /* Comist */ = {
 			isa = PBXGroup;
 			children = (
+				85BA3AC72B9B4FD500132F5C /* Core */,
 				85FFD6912B9B419D00264B33 /* ComistApp.swift */,
 				85FFD6932B9B419D00264B33 /* ContentView.swift */,
-				85FFD6952B9B419F00264B33 /* Assets.xcassets */,
 				85FFD6972B9B419F00264B33 /* Preview Content */,
 			);
 			path = Comist;
@@ -120,15 +120,6 @@
 			path = ComistTests;
 			sourceTree = "<group>";
 		};
-		85FFD6AB2B9B419F00264B33 /* ComistUITests */ = {
-			isa = PBXGroup;
-			children = (
-				85FFD6AC2B9B419F00264B33 /* ComistUITests.swift */,
-				85FFD6AE2B9B419F00264B33 /* ComistUITestsLaunchTests.swift */,
-			);
-			path = ComistUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +138,7 @@
 			name = Comist;
 			packageProductDependencies = (
 				85DBFEA52B9B42B500BF2DFC /* ComposableArchitecture */,
+				85BA3ACE2B9B567E00132F5C /* FirebaseStorage */,
 			);
 			productName = Comist;
 			productReference = 85FFD68E2B9B419D00264B33 /* Comist.app */;
@@ -170,24 +162,6 @@
 			productReference = 85FFD69E2B9B419F00264B33 /* ComistTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		85FFD6A72B9B419F00264B33 /* ComistUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 85FFD6B82B9B419F00264B33 /* Build configuration list for PBXNativeTarget "ComistUITests" */;
-			buildPhases = (
-				85FFD6A42B9B419F00264B33 /* Sources */,
-				85FFD6A52B9B419F00264B33 /* Frameworks */,
-				85FFD6A62B9B419F00264B33 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				85FFD6AA2B9B419F00264B33 /* PBXTargetDependency */,
-			);
-			name = ComistUITests;
-			productName = ComistUITests;
-			productReference = 85FFD6A82B9B419F00264B33 /* ComistUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,10 +179,6 @@
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 85FFD68D2B9B419D00264B33;
 					};
-					85FFD6A72B9B419F00264B33 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 85FFD68D2B9B419D00264B33;
-					};
 				};
 			};
 			buildConfigurationList = 85FFD6892B9B419D00264B33 /* Build configuration list for PBXProject "Comist" */;
@@ -222,6 +192,7 @@
 			mainGroup = 85FFD6852B9B419D00264B33;
 			packageReferences = (
 				85DBFEA42B9B42B500BF2DFC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				85BA3ACD2B9B567E00132F5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 85FFD68F2B9B419D00264B33 /* Products */;
 			projectDirPath = "";
@@ -229,7 +200,6 @@
 			targets = (
 				85FFD68D2B9B419D00264B33 /* Comist */,
 				85FFD69D2B9B419F00264B33 /* ComistTests */,
-				85FFD6A72B9B419F00264B33 /* ComistUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -240,18 +210,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				85FFD6992B9B419F00264B33 /* Preview Assets.xcassets in Resources */,
+				85BA3ACC2B9B563500132F5C /* GoogleService-Info.plist in Resources */,
+				85BA3AC92B9B504200132F5C /* AppConfig.xcconfig in Resources */,
 				85FFD6962B9B419F00264B33 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		85FFD69C2B9B419F00264B33 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		85FFD6A62B9B419F00264B33 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -265,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BA3AD12B9B576900132F5C /* AppDelegate.swift in Sources */,
 				85FFD6942B9B419D00264B33 /* ContentView.swift in Sources */,
 				85FFD6922B9B419D00264B33 /* ComistApp.swift in Sources */,
 			);
@@ -278,15 +244,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85FFD6A42B9B419F00264B33 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				85FFD6AD2B9B419F00264B33 /* ComistUITests.swift in Sources */,
-				85FFD6AF2B9B419F00264B33 /* ComistUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -294,11 +251,6 @@
 			isa = PBXTargetDependency;
 			target = 85FFD68D2B9B419D00264B33 /* Comist */;
 			targetProxy = 85FFD69F2B9B419F00264B33 /* PBXContainerItemProxy */;
-		};
-		85FFD6AA2B9B419F00264B33 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 85FFD68D2B9B419D00264B33 /* Comist */;
-			targetProxy = 85FFD6A92B9B419F00264B33 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -424,6 +376,7 @@
 		};
 		85FFD6B32B9B419F00264B33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85BA3AC82B9B504200132F5C /* AppConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -433,6 +386,7 @@
 				DEVELOPMENT_TEAM = Y7693M9CNF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Comist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -443,8 +397,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lilcappucc.Comist.Comist;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(APP_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -453,6 +406,7 @@
 		};
 		85FFD6B42B9B419F00264B33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85BA3AC82B9B504200132F5C /* AppConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +416,7 @@
 				DEVELOPMENT_TEAM = Y7693M9CNF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Comist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -472,8 +427,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lilcappucc.Comist.Comist;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(APP_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -520,42 +474,6 @@
 			};
 			name = Release;
 		};
-		85FFD6B92B9B419F00264B33 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y7693M9CNF;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lilcappucc.Comist.ComistUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Comist;
-			};
-			name = Debug;
-		};
-		85FFD6BA2B9B419F00264B33 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y7693M9CNF;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lilcappucc.Comist.ComistUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Comist;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -586,18 +504,17 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85FFD6B82B9B419F00264B33 /* Build configuration list for PBXNativeTarget "ComistUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				85FFD6B92B9B419F00264B33 /* Debug */,
-				85FFD6BA2B9B419F00264B33 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		85BA3ACD2B9B567E00132F5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.1;
+			};
+		};
 		85DBFEA42B9B42B500BF2DFC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -609,6 +526,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		85BA3ACE2B9B567E00132F5C /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85BA3ACD2B9B567E00132F5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		85DBFEA52B9B42B500BF2DFC /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 85DBFEA42B9B42B500BF2DFC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
