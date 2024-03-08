@@ -89,3 +89,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 .DS_Store
+Comist.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
