@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		853576152B9B7D820013B36C /* Presentation in Frameworks */ = {isa = PBXBuildFile; productRef = 853576142B9B7D820013B36C /* Presentation */; };
 		85BA3AC92B9B504200132F5C /* AppConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85BA3AC82B9B504200132F5C /* AppConfig.xcconfig */; };
 		85BA3ACC2B9B563500132F5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85BA3ACB2B9B563500132F5C /* GoogleService-Info.plist */; };
 		85BA3ACF2B9B567E00132F5C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 85BA3ACE2B9B567E00132F5C /* FirebaseStorage */; };
 		85BA3AD12B9B576900132F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BA3AD02B9B576900132F5C /* AppDelegate.swift */; };
 		85DBFEA62B9B42B500BF2DFC /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 85DBFEA52B9B42B500BF2DFC /* ComposableArchitecture */; };
 		85FFD6922B9B419D00264B33 /* ComistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFD6912B9B419D00264B33 /* ComistApp.swift */; };
-		85FFD6942B9B419D00264B33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFD6932B9B419D00264B33 /* ContentView.swift */; };
 		85FFD6962B9B419F00264B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85FFD6952B9B419F00264B33 /* Assets.xcassets */; };
 		85FFD6992B9B419F00264B33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85FFD6982B9B419F00264B33 /* Preview Assets.xcassets */; };
 		85FFD6A32B9B419F00264B33 /* ComistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFD6A22B9B419F00264B33 /* ComistTests.swift */; };
@@ -30,13 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		853576102B9B7A970013B36C /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
 		85BA3AC82B9B504200132F5C /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
 		85BA3ACA2B9B50C800132F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85BA3ACB2B9B563500132F5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85BA3AD02B9B576900132F5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85FFD68E2B9B419D00264B33 /* Comist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85FFD6912B9B419D00264B33 /* ComistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComistApp.swift; sourceTree = "<group>"; };
-		85FFD6932B9B419D00264B33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		85FFD6952B9B419F00264B33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85FFD6982B9B419F00264B33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85FFD69E2B9B419F00264B33 /* ComistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85DBFEA62B9B42B500BF2DFC /* ComposableArchitecture in Frameworks */,
+				853576152B9B7D820013B36C /* Presentation in Frameworks */,
 				85BA3ACF2B9B567E00132F5C /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +64,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		853576112B9B7ABB0013B36C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		85BA3AC72B9B4FD500132F5C /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,9 +86,11 @@
 		85FFD6852B9B419D00264B33 = {
 			isa = PBXGroup;
 			children = (
+				853576102B9B7A970013B36C /* Modules */,
 				85FFD6902B9B419D00264B33 /* Comist */,
 				85FFD6A12B9B419F00264B33 /* ComistTests */,
 				85FFD68F2B9B419D00264B33 /* Products */,
+				853576112B9B7ABB0013B36C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +108,6 @@
 			children = (
 				85BA3AC72B9B4FD500132F5C /* Core */,
 				85FFD6912B9B419D00264B33 /* ComistApp.swift */,
-				85FFD6932B9B419D00264B33 /* ContentView.swift */,
 				85FFD6972B9B419F00264B33 /* Preview Content */,
 			);
 			path = Comist;
@@ -139,6 +148,7 @@
 			packageProductDependencies = (
 				85DBFEA52B9B42B500BF2DFC /* ComposableArchitecture */,
 				85BA3ACE2B9B567E00132F5C /* FirebaseStorage */,
+				853576142B9B7D820013B36C /* Presentation */,
 			);
 			productName = Comist;
 			productReference = 85FFD68E2B9B419D00264B33 /* Comist.app */;
@@ -231,7 +241,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				85BA3AD12B9B576900132F5C /* AppDelegate.swift in Sources */,
-				85FFD6942B9B419D00264B33 /* ContentView.swift in Sources */,
 				85FFD6922B9B419D00264B33 /* ComistApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +535,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		853576142B9B7D820013B36C /* Presentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Presentation;
+		};
 		85BA3ACE2B9B567E00132F5C /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 85BA3ACD2B9B567E00132F5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

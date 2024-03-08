@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Presentation
 
 @main
 struct ComistApp: App {
@@ -14,7 +15,7 @@ struct ComistApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
