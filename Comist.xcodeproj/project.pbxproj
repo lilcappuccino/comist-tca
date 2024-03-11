@@ -12,7 +12,6 @@
 		85BA3ACC2B9B563500132F5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85BA3ACB2B9B563500132F5C /* GoogleService-Info.plist */; };
 		85BA3ACF2B9B567E00132F5C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 85BA3ACE2B9B567E00132F5C /* FirebaseStorage */; };
 		85BA3AD12B9B576900132F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BA3AD02B9B576900132F5C /* AppDelegate.swift */; };
-		85DBFEA62B9B42B500BF2DFC /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 85DBFEA52B9B42B500BF2DFC /* ComposableArchitecture */; };
 		85FFD6922B9B419D00264B33 /* ComistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FFD6912B9B419D00264B33 /* ComistApp.swift */; };
 		85FFD6962B9B419F00264B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85FFD6952B9B419F00264B33 /* Assets.xcassets */; };
 		85FFD6992B9B419F00264B33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85FFD6982B9B419F00264B33 /* Preview Assets.xcassets */; };
@@ -48,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85DBFEA62B9B42B500BF2DFC /* ComposableArchitecture in Frameworks */,
 				853576152B9B7D820013B36C /* Presentation in Frameworks */,
 				85BA3ACF2B9B567E00132F5C /* FirebaseStorage in Frameworks */,
 			);
@@ -146,7 +144,6 @@
 			);
 			name = Comist;
 			packageProductDependencies = (
-				85DBFEA52B9B42B500BF2DFC /* ComposableArchitecture */,
 				85BA3ACE2B9B567E00132F5C /* FirebaseStorage */,
 				853576142B9B7D820013B36C /* Presentation */,
 			);
@@ -543,11 +540,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 85BA3ACD2B9B567E00132F5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
-		};
-		85DBFEA52B9B42B500BF2DFC /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 85DBFEA42B9B42B500BF2DFC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
