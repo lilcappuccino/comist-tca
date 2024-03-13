@@ -7,15 +7,16 @@
 
 import SwiftUI
 import Presentation
+import ComposableArchitecture
 
 @main
 struct ComistApp: App {
-    
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+        
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            QuestionListView(store: Store(initialState: QuestionList.State()) {
+                QuestionList()._printChanges()
+            })
         }
     }
 }

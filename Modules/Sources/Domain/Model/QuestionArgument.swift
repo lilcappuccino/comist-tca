@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  QuestionArgument.swift
 //  
 //
 //  Created by Vadim Marchenko on 11.03.2024.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct QuestionArgument {
-    let title: String
-    let value: Int
-    let position: Position
+public struct QuestionArgument {
+  public let title: String
+  public let value: Int
+  public let position: ArgumentPosition
 }
 

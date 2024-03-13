@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ArgumentPosition.swift
 //  
 //
 //  Created by Vadim Marchenko on 11.03.2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Position: Int  {
+public enum ArgumentPosition: Int  {
     case pros
     case cons
 }

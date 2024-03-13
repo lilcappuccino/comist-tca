@@ -7,9 +7,16 @@
 
 import Foundation
 
-struct Question {
+enum QuestionState {
+    case cons
+    case pros
+    case unowned
+}
+
+public struct Question {
+    let identifier: UUID
     let title: String
-    let subtitle: String
+    let subtitle: String?
     let arguments: [QuestionArgument]
     
     // Helpers
@@ -33,9 +40,20 @@ struct Question {
         }
     }
     
-    var isPros: Bool {
-        prosArgumentsValue > consArgumentsValue
+    var state: QuestionState {
+        if prosArgumentsValue > consArgumentsValue {
+            return .pros
+        } else if prosArgumentsValue < consArgumentsValue {
+            return .cons
+        } else {
+            return .unowned
+        }
+    }
+    
+    init(identifier: UUID = UUID(), title: String, subtitle: String?, arguments: [QuestionArgument]) {
+        self.identifier = identifier
+        self.title = title
+        self.subtitle = subtitle
+        self.arguments = arguments
     }
 }
-
-
