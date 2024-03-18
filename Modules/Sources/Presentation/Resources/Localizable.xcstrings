@@ -1,6 +1,32 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "error-delete" : {
+      "extractionState" : "manual"
+    },
+    "error-fetch" : {
+      "extractionState" : "manual"
+    },
+    "error-insert" : {
+      "extractionState" : "manual"
+    },
+    "home-empty-state" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You have not added any questions yet. \nPress + to add one"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ви ще не додали жодного питання.\nНатисніть на кнопку \"+\" для додавання"
+          }
+        }
+      }
+    },
     "title" : {
       "extractionState" : "manual",
       "localizations" : {

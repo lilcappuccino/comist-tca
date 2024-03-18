@@ -10,38 +10,75 @@ import ComposableArchitecture
 
 public struct QuestionListView: View {
     
+    // MARK: - Properties
     @Bindable var store: StoreOf<QuestionList>
     
+    // MARK: - Init
     public init(store: StoreOf<QuestionList>) {
         self.store = store
     }
     
+    // MARK: - Body
     public var body: some View {
         NavigationStack {
-//            if store.questions.isEmpty {
-            HStack {
-                Text("Empry state")
+            ZStack {
+                emptyState
+                content
             }
-//            } else {
-//                ScrollView {
-//                    LazyVStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content: {
-//                        ForEach(1...10, id: \.self) { count in
-//                            /*@START_MENU_TOKEN@*/Text("Placeholder \(count)")/*@END_MENU_TOKEN@*/
-//                        }
-//                    })
-//                }
-//                
-//                //                .
-//            }
-        } 
-        .onAppear {
-            store.send(.initialAction)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    toolbar
+                }
+            }
+            .onAppear {
+                UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor.purple
+                store.send(.initialAction)
+            }
         }
-        .background(Color.background)
-            .navigationTitle("title".localized)
-            .toolbarBackground(Color.background, for: .navigationBar)
+    }
+    // MARK: Toolbar
+    @ViewBuilder
+    var toolbar: some View {
+        HStack {
+            Text("title".localized)
+                .font(.largeTitle)
+            Spacer()
+            Button(action: {
+                store.send(.itemAdded)
+            }, label: {
+                Image(systemName: "plus")
+                    .font(.title)
+            })
+        }
     }
     
+    // MARK: Empty State
+    @ViewBuilder
+    var emptyState: some View {
+        VStack {
+            Image(systemName: "tortoise.fill")
+                .font(.largeTitle)
+                .padding()
+            Text("home-empty-state".localized)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity, alignment: .center)
+        }.padding(.bottom, 72)
+            .foregroundStyle(Color.background)
+            .padding()
+    }
+    
+    // MARK: - Content
+    @ViewBuilder
+    var content: some View {
+        Form {
+            ForEach(store.questions, id: \.identifier) { item in
+                QuestionListItemView(item: item)
+            }.onDelete(perform: { indexSet in
+                store.send(.itemDeleted(indexSet))
+            })
+        }
+        .opacity(store.questions.isEmpty ? 0 : 1)
+    }
 }
 
 #Preview {

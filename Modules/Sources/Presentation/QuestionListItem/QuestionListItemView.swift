@@ -8,11 +8,33 @@
 import SwiftUI
 
 struct QuestionListItemView: View {
+    
+    // MARK: - Properies
+    let item: QuestionListModel
+    
+    // MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            if let emojiView = emojiView(for: item.state) {
+                emojiView
+                    .padding(.trailing, 4)
+            }
+            Text(item.title)
+        }.padding(.vertical, 8)
+    }
+    
+    private func emojiView(for state: QuestionStateModel) -> Text? {
+        if item.state == QuestionStateModel.cons {
+            return Text("🔴")
+        } else if item.state == QuestionStateModel.pros {
+            return Text("🟢")
+        }
+        return nil
     }
 }
 
 #Preview {
-    QuestionListItemView()
+    QuestionListItemView(item: QuestionListModel(identifier: UUID(),
+                                                 title: "Test",
+                                                 state: .pros))
 }

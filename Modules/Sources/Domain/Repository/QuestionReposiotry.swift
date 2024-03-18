@@ -30,6 +30,10 @@ final class QuestionRepository {
         return try await localStorage.insert(question: question.mapToData())
     }
     
+    @Sendable public func delete(by identifier: UUID) async throws {
+        return try await localStorage.delete(by: identifier)
+    }
+    
 }
 
 // MARK: - Mock
@@ -43,7 +47,7 @@ final class QuestionRepositoryMock {
                          ])]
     }
     
-    @Sendable func insert() async {
-        
-    }
+    @Sendable func insert() async {}
+    
+    @Sendable func delete(by identifier: UUID) async {}
 }

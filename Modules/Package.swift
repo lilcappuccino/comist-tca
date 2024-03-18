@@ -28,8 +28,7 @@ let package = Package(
         .target(
             name: "Presentation",
             dependencies: [.product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
-                          "Domain"],
-            resources: [.process("Resources/Assets")]),
+                          "Domain"]),
         .target(
             name: "Domain",
             dependencies: [.product(name: "ComposableArchitecture", package: "swift-composable-architecture"), "Data"]),

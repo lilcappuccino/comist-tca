@@ -15,6 +15,7 @@ extension Logger {
     enum LogCategory: String {
         case localStorage
         case repository
+        case questionListPresentation
         
         func callAsFunction() -> String {
             self.rawValue
@@ -30,6 +31,7 @@ extension Logger {
     
     public static let localStorage = Logger.with(category: LogCategory.localStorage)
     public static let repository = Logger.with(category: .repository)
+    public static let questionListPresentation = Logger.with(category: .questionListPresentation)
 }
 
 extension Logger {
