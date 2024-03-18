@@ -16,6 +16,7 @@ extension Logger {
         case localStorage
         case repository
         case questionListPresentation
+        case questionDetailPresentation
         
         func callAsFunction() -> String {
             self.rawValue
@@ -32,6 +33,7 @@ extension Logger {
     public static let localStorage = Logger.with(category: LogCategory.localStorage)
     public static let repository = Logger.with(category: .repository)
     public static let questionListPresentation = Logger.with(category: .questionListPresentation)
+    public static let questionDetailPresentation = Logger.with(category: .questionDetailPresentation)
 }
 
 extension Logger {
