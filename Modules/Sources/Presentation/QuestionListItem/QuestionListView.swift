@@ -9,18 +9,18 @@ import SwiftUI
 import ComposableArchitecture
 
 public struct QuestionListView: View {
-    
+
     // MARK: - Properties
     @Bindable var store: StoreOf<QuestionList>
-    
+
     // MARK: - Init
     public init(store: StoreOf<QuestionList>) {
         self.store = store
     }
-    
+
     // MARK: - Body
     public var body: some View {
-        NavigationStack {
+        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
             ZStack {
                 emptyState
                 content
@@ -28,14 +28,29 @@ public struct QuestionListView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     toolbar
+                        .foregroundStyle(.purple)
                 }
             }
             .onAppear {
                 UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor.purple
-                store.send(.initialAction)
+                store.send(.didAppear)
+            }
+        } destination: { store in
+            switch store.state {
+            case .detail:
+                if let store = store.scope(state: \.detail, action: \.openDetail) {
+                    QuestionDetailView(store: store)
+                }
             }
         }
+        .sheet(
+            item: $store.scope(state: \.addQuestion, action: \.addQuestion)
+        ) { store in
+          CreateQuestionView(store: store)
+        }
+        .tint(Color.background)
     }
+
     // MARK: Toolbar
     @ViewBuilder
     var toolbar: some View {
@@ -44,14 +59,15 @@ public struct QuestionListView: View {
                 .font(.largeTitle)
             Spacer()
             Button(action: {
-                store.send(.itemAdded)
+                store.send(.addQuestionTapped)
             }, label: {
                 Image(systemName: "plus")
-                    .font(.title)
+                    .font(.title2)
             })
         }
+        .foregroundStyle(Color.background)
     }
-    
+
     // MARK: Empty State
     @ViewBuilder
     var emptyState: some View {
@@ -66,14 +82,19 @@ public struct QuestionListView: View {
             .foregroundStyle(Color.background)
             .padding()
     }
-    
+
     // MARK: - Content
     @ViewBuilder
     var content: some View {
         Form {
             ForEach(store.questions, id: \.identifier) { item in
                 QuestionListItemView(item: item)
-            }.onDelete(perform: { indexSet in
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        store.send(.openItemTapped(item))
+                    }
+            }
+            .onDelete(perform: { indexSet in
                 store.send(.itemDeleted(indexSet))
             })
         }

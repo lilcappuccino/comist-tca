@@ -11,7 +11,7 @@ import ComposableArchitecture
 
 @main
 struct ComistApp: App {
-        
+
     var body: some Scene {
         WindowGroup {
             QuestionListView(store: Store(initialState: QuestionList.State()) {

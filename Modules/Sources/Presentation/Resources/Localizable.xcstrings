@@ -1,7 +1,13 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "cons" : {
+      "extractionState" : "manual"
+    },
     "error-delete" : {
+      "extractionState" : "manual"
+    },
+    "error-does-not-exist" : {
       "extractionState" : "manual"
     },
     "error-fetch" : {
@@ -26,6 +32,21 @@
           }
         }
       }
+    },
+    "input-arg-title" : {
+      "extractionState" : "manual"
+    },
+    "input-subtitle" : {
+      "extractionState" : "manual"
+    },
+    "input-title" : {
+      "extractionState" : "manual"
+    },
+    "pros" : {
+      "extractionState" : "manual"
+    },
+    "save" : {
+      "extractionState" : "manual"
     },
     "title" : {
       "extractionState" : "manual",

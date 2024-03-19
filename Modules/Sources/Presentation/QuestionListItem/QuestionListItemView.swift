@@ -8,26 +8,25 @@
 import SwiftUI
 
 struct QuestionListItemView: View {
-    
+
     // MARK: - Properies
     let item: QuestionListModel
-    
+
     // MARK: - Body
     var body: some View {
         HStack {
-            if let emojiView = emojiView(for: item.state) {
+            if let emojiView = emojiView(for: item.position) {
                 emojiView
                     .padding(.trailing, 4)
             }
             Text(item.title)
+                .frame(maxWidth: .infinity, alignment: .leading)
         }.padding(.vertical, 8)
     }
-    
-    private func emojiView(for state: QuestionStateModel) -> Text? {
-        if item.state == QuestionStateModel.cons {
-            return Text("🔴")
-        } else if item.state == QuestionStateModel.pros {
-            return Text("🟢")
+
+    private func emojiView(for position: QuestionPositionModel) -> Text? {
+        if item.position != QuestionPositionModel.unowned {
+            return Text("\(position.emoji)")
         }
         return nil
     }
@@ -36,5 +35,5 @@ struct QuestionListItemView: View {
 #Preview {
     QuestionListItemView(item: QuestionListModel(identifier: UUID(),
                                                  title: "Test",
-                                                 state: .pros))
+                                                 position: .pros))
 }

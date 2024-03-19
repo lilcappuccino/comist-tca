@@ -8,9 +8,9 @@
 import Foundation
 import Domain
 
-typealias QuestionStateModel = QuestionState
-struct QuestionListModel {
+typealias QuestionPositionModel = ArgumentPosition
+public struct QuestionListModel {
     let identifier: UUID
     let title: String
-    let state: QuestionStateModel
+    let position: QuestionPositionModel
 }

@@ -19,7 +19,7 @@ let package = Package(
             targets: ["Data"]),
         .library(
             name: "Core",
-            targets: ["Core"]),
+            targets: ["Core"])
     ],
     dependencies: [.package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "1.9.2")],
     targets: [
@@ -39,6 +39,6 @@ let package = Package(
             name: "Core"),
         .testTarget(
             name: "PresentationTests",
-            dependencies: ["Presentation"]),
+            dependencies: ["Presentation"])
     ]
 )
