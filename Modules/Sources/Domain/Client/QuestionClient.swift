@@ -11,8 +11,9 @@ import Data
 
 @DependencyClient
 public struct QuestionClient {
+    public var fetchItem: @Sendable (UUID) async throws -> Question
     public var fetch: @Sendable () async throws -> [Question]
-    public var insert: @Sendable () async throws -> Void
+    public var insert: @Sendable (Question) async throws -> Void
     public var delete: @Sendable (UUID) async throws -> Void
 }
 
@@ -26,21 +27,24 @@ extension DependencyValues {
 extension QuestionClient: DependencyKey, TestDependencyKey {
     public static var liveValue: QuestionClient {
         let repository = QuestionRepository(localStorage: LocalStorageImpl())
-        return QuestionClient(fetch: repository.fetchQuestions, 
-                              insert: repository.insert, 
+        return QuestionClient(fetchItem: repository.fetchQuestion(by: ),
+                              fetch: repository.fetchQuestions,
+                              insert: repository.insert,
                               delete: repository.delete(by: ))
     }
-    
+
     public static var previewValue: QuestionClient {
         let repository = QuestionRepositoryMock()
-        return QuestionClient(fetch: repository.fetchQuestions,
-                              insert: repository.insert, 
+        return QuestionClient(fetchItem: repository.fetchQuestion,
+                              fetch: repository.fetchQuestions,
+                              insert: repository.insert,
                               delete: repository.delete(by:))
     }
-    
+
     public static var testValue: QuestionClient {
         let repository = QuestionRepositoryMock()
-        return QuestionClient(fetch: repository.fetchQuestions,
+        return QuestionClient(fetchItem: repository.fetchQuestion,
+                              fetch: repository.fetchQuestions,
                               insert: repository.insert,
                               delete: repository.delete(by:))
     }

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    
+
     // The general background color of your app's interface.
     static let background = Color("purple-custom", bundle: .module)
 }

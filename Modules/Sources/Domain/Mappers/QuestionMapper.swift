@@ -13,7 +13,7 @@ extension Question {
         QuestionEntity(identifier: self.identifier,
                        title: self.title,
                        subtitle: self.subtitle,
-                       arguments: self.arguments.map { $0.mapToData()} )
+                       arguments: self.arguments.map { $0.mapToData()})
     }
 }
 
