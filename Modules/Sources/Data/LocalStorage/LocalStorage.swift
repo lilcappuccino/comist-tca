@@ -9,20 +9,25 @@ import Foundation
 import SwiftData
 import Core
 
-
 enum LocalStorageError: Error {
     case couldNotFetch
     case couldNotDelete
     case couldNotInsert
-    
+    case doesNotExist
+    case couldNotAddArgument
+
     var description: String {
         switch self {
         case .couldNotFetch:
-            "error-fetch"
+            return "error-fetch"
         case .couldNotDelete:
-            "error-delete"
+            return "error-delete"
         case .couldNotInsert:
-            "error-insert"
+            return "error-insert"
+        case .doesNotExist:
+            return "error-does-not-exist"
+        case .couldNotAddArgument:
+            return ""
         }
     }
 }
@@ -31,22 +36,42 @@ public protocol LocalStorage: AnyObject {
     func fetchQuestions() async throws -> [QuestionEntity]
     func insert(question: QuestionEntity) async throws
     func delete(by identifier: UUID) async throws
+    func fetchQuestions(by identifier: UUID) async throws -> QuestionEntity
+    func insertArgument(by questionIdentifier: UUID, argument: QuestionArgumentEntity) async throws
+    func deleteArgument(by questionIdentifier: UUID, argumentIdentifier: UUID) async throws
 }
 
 public actor LocalStorageImpl: LocalStorage {
-    
+
     private let logger = ComistLogger.localStorage
     private var modelContainer = try? ModelContainer(for: QuestionEntity.self)
-    
+
     public init() { }
-    
+
+    @MainActor @Sendable public func fetchQuestions(by identifier: UUID) async throws -> QuestionEntity {
+        guard let container = await  modelContainer else {
+            fatalError("Could not extract model container")
+        }
+        let descriptor = FetchDescriptor<QuestionEntity>(predicate: #Predicate { $0.identifier == identifier })
+        do {
+            guard let model = try container.mainContext.fetch(descriptor).first else {
+                throw LocalStorageError.doesNotExist
+            }
+            logger.info("fetched question: \(model.title)")
+            return model
+        } catch let error {
+            logger.error("\(error.localizedDescription)")
+            throw LocalStorageError.couldNotFetch
+        }
+    }
+
     @MainActor @Sendable public func fetchQuestions() async throws -> [QuestionEntity] {
         guard let container = await  modelContainer else {
             fatalError("Could not extract model container")
         }
         let descriptor = FetchDescriptor<QuestionEntity>()
         do {
-            let models =  try container.mainContext.fetch(descriptor)
+            let models = try container.mainContext.fetch(descriptor)
             logger.info("fetched questions: \(models.count)")
             return models
         } catch let error {
@@ -54,7 +79,7 @@ public actor LocalStorageImpl: LocalStorage {
             throw LocalStorageError.couldNotFetch
         }
     }
-    
+
     @MainActor public func insert(question: QuestionEntity) async throws {
         guard let container = await modelContainer else {
             fatalError("Could not extract model container")
@@ -67,7 +92,7 @@ public actor LocalStorageImpl: LocalStorage {
             throw LocalStorageError.couldNotInsert
         }
     }
-    
+
     @MainActor public func delete(by identifier: UUID) async throws {
         guard let container = await modelContainer else {
             fatalError("Could not extract model container")
@@ -79,5 +104,38 @@ public actor LocalStorageImpl: LocalStorage {
             throw LocalStorageError.couldNotDelete
         }
     }
-}
 
+    @MainActor public func insertArgument(by questionIdentifier: UUID, argument: QuestionArgumentEntity) async throws {
+        guard let container = await  modelContainer else {
+            fatalError("Could not extract model container")
+        }
+        let descriptor = FetchDescriptor<QuestionEntity>(predicate: #Predicate { $0.identifier == questionIdentifier })
+        do {
+            guard let model = try container.mainContext.fetch(descriptor).first else {
+                throw LocalStorageError.doesNotExist
+            }
+            model.arguments.append(argument)
+            try container.mainContext.save()
+        } catch let error {
+            logger.error("\(error.localizedDescription)")
+            throw LocalStorageError.couldNotAddArgument
+        }
+    }
+
+    @MainActor public func deleteArgument(by questionIdentifier: UUID, argumentIdentifier: UUID) async throws {
+        guard let container = await  modelContainer else {
+            fatalError("Could not extract model container")
+        }
+        let descriptor = FetchDescriptor<QuestionEntity>(predicate: #Predicate { $0.identifier == questionIdentifier })
+        do {
+            guard let model = try container.mainContext.fetch(descriptor).first else {
+                throw LocalStorageError.doesNotExist
+            }
+            model.arguments.removeAll(where: { $0.id == argumentIdentifier })
+            try container.mainContext.save()
+        } catch let error {
+            logger.error("\(error.localizedDescription)")
+            throw LocalStorageError.couldNotAddArgument
+        }
+    }
+}

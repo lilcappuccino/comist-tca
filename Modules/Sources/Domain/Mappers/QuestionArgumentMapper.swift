@@ -10,7 +10,8 @@ import Data
 
 extension QuestionArgument {
     func mapToData() -> QuestionArgumentEntity {
-        return QuestionArgumentEntity(title: self.title,
+        return QuestionArgumentEntity(id: self.id,
+                                      title: self.title,
                                       value: self.value,
                                       position: self.position.mapToData())
     }
@@ -18,7 +19,8 @@ extension QuestionArgument {
 
 extension QuestionArgumentEntity {
     func mapToDomain() -> QuestionArgument {
-        QuestionArgument(title: self.title,
+        QuestionArgument(id: self.id,
+                         title: self.title,
                          value: self.value,
                          position: self.position.mapToDomain())
     }

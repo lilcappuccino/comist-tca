@@ -15,6 +15,8 @@ public struct QuestionClient {
     public var fetch: @Sendable () async throws -> [Question]
     public var insert: @Sendable (Question) async throws -> Void
     public var delete: @Sendable (UUID) async throws -> Void
+    public var insertArgument: @Sendable(UUID, QuestionArgument) async throws -> Void
+    public var deleteArgument: @Sendable(UUID, UUID) async throws -> Void
 }
 
 extension DependencyValues {
@@ -30,7 +32,9 @@ extension QuestionClient: DependencyKey, TestDependencyKey {
         return QuestionClient(fetchItem: repository.fetchQuestion(by: ),
                               fetch: repository.fetchQuestions,
                               insert: repository.insert,
-                              delete: repository.delete(by: ))
+                              delete: repository.delete(by:),
+                              insertArgument: repository.insertArgument(by:argument:),
+                              deleteArgument: repository.deleteArgument(by:argumentIdentifier:))
     }
 
     public static var previewValue: QuestionClient {
@@ -38,7 +42,9 @@ extension QuestionClient: DependencyKey, TestDependencyKey {
         return QuestionClient(fetchItem: repository.fetchQuestion,
                               fetch: repository.fetchQuestions,
                               insert: repository.insert,
-                              delete: repository.delete(by:))
+                              delete: repository.delete(by:),
+                              insertArgument: repository.insertArgument(by:argument:),
+                              deleteArgument: repository.deleteArgument(by:argumentIdentifier:))
     }
 
     public static var testValue: QuestionClient {
@@ -46,6 +52,8 @@ extension QuestionClient: DependencyKey, TestDependencyKey {
         return QuestionClient(fetchItem: repository.fetchQuestion,
                               fetch: repository.fetchQuestions,
                               insert: repository.insert,
-                              delete: repository.delete(by:))
+                              delete: repository.delete(by:),
+                              insertArgument: repository.insertArgument(by:argument:),
+                              deleteArgument: repository.deleteArgument(by:argumentIdentifier:))
     }
 }
