@@ -17,7 +17,7 @@ public struct CreateQuestion {
     @Dependency(\.questionClient) var client
     @Dependency(\.dismiss) var dismiss
     private let logger = ComistLogger.createQuestionPresentation
-    
+
     // MARK: Init
     public init() {}
 
@@ -53,7 +53,7 @@ public struct CreateQuestion {
                                         arguments: [])
                 state.question = question
                 return .run { send in
-                  
+
                     // TODO: Add error hanlidng
                     do {
                         try await client.insert(question)
@@ -63,7 +63,7 @@ public struct CreateQuestion {
                     await send(.questionSaved(question))
                 }
             case .questionSaved:
-                return .run { send in
+                return .run { _ in
                     await dismiss()
                 }
             }

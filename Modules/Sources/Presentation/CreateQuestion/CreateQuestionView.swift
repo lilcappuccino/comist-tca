@@ -33,7 +33,7 @@ public struct CreateQuestionView: View {
                       text: .init(get: { store.title  },
                                   set: { store.send(.titleChanged($0))}
                                  ))
-            .textFieldStyle(.roundedBorder)
+
             .font(.title)
             .textFieldStyle(.roundedBorder)
             TextField("input-subtitle".localized,
