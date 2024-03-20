@@ -10,5 +10,4 @@ import Foundation
 public enum ArgumentPositionEntity: Int, Codable {
     case pros
     case cons
-
 }

@@ -41,8 +41,9 @@ public struct CreateQuestionView: View {
                                   set: { store.send(.subtitle($0)) }
                                  ))
             Spacer()
-        }.padding()
-            .presentationDetents([.height(150)])
+        }
+        .padding()
+        .presentationDetents([.height(150)])
     }
 }
 

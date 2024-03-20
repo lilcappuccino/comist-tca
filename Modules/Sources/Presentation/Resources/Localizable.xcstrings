@@ -16,6 +16,15 @@
     "error-insert" : {
       "extractionState" : "manual"
     },
+    "Extreme" : {
+      "extractionState" : "manual"
+    },
+    "High" : {
+      "extractionState" : "manual"
+    },
+    "Highest" : {
+      "extractionState" : "manual"
+    },
     "home-empty-state" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -40,6 +49,12 @@
       "extractionState" : "manual"
     },
     "input-title" : {
+      "extractionState" : "manual"
+    },
+    "Low" : {
+      "extractionState" : "manual"
+    },
+    "Medium" : {
       "extractionState" : "manual"
     },
     "pros" : {

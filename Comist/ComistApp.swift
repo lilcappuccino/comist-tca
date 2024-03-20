@@ -15,7 +15,8 @@ struct ComistApp: App {
     var body: some Scene {
         WindowGroup {
             QuestionListView(store: Store(initialState: QuestionList.State()) {
-                QuestionList()._printChanges()
+                QuestionList()
+                    ._printChanges()
             })
         }
     }

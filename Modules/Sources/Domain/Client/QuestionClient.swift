@@ -9,6 +9,7 @@ import Foundation
 import ComposableArchitecture
 import Data
 
+// MARK: - QuestionClient
 @DependencyClient
 public struct QuestionClient {
     public var fetchItem: @Sendable (UUID) async throws -> Question
@@ -17,13 +18,6 @@ public struct QuestionClient {
     public var delete: @Sendable (UUID) async throws -> Void
     public var insertArgument: @Sendable(UUID, QuestionArgument) async throws -> Void
     public var deleteArgument: @Sendable(UUID, UUID) async throws -> Void
-}
-
-extension DependencyValues {
-    public var questionClient: QuestionClient {
-        get { self[QuestionClient.self] }
-        set { self[QuestionClient.self] = newValue }
-    }
 }
 
 extension QuestionClient: DependencyKey, TestDependencyKey {
@@ -55,5 +49,13 @@ extension QuestionClient: DependencyKey, TestDependencyKey {
                               delete: repository.delete(by:),
                               insertArgument: repository.insertArgument(by:argument:),
                               deleteArgument: repository.deleteArgument(by:argumentIdentifier:))
+    }
+}
+
+// MARK: - QuestionClient + Test
+extension DependencyValues {
+    public var questionClient: QuestionClient {
+        get { self[QuestionClient.self] }
+        set { self[QuestionClient.self] = newValue }
     }
 }

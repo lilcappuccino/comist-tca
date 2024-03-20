@@ -53,7 +53,7 @@ public struct QuestionListView: View {
 
     // MARK: Toolbar
     @ViewBuilder
-    var toolbar: some View {
+    private var toolbar: some View {
         HStack {
             Text("title".localized)
                 .font(.largeTitle)
@@ -70,7 +70,7 @@ public struct QuestionListView: View {
 
     // MARK: Empty State
     @ViewBuilder
-    var emptyState: some View {
+   private var emptyState: some View {
         VStack {
             Image(systemName: "tortoise.fill")
                 .font(.largeTitle)
@@ -85,7 +85,7 @@ public struct QuestionListView: View {
 
     // MARK: - Content
     @ViewBuilder
-    var content: some View {
+    private var content: some View {
         Form {
             ForEach(store.questions, id: \.identifier) { item in
                 QuestionListItemView(item: item)

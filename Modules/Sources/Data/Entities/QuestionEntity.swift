@@ -16,7 +16,10 @@ public class QuestionEntity {
     public var subtitle: String?
     public var arguments: [QuestionArgumentEntity]
 
-    public init(identifier: UUID = UUID(), title: String, subtitle: String? = nil, arguments: [QuestionArgumentEntity]) {
+    public init(identifier: UUID = UUID(),
+                title: String,
+                subtitle: String? = nil,
+                arguments: [QuestionArgumentEntity]) {
         self.identifier = identifier
         self.title = title
         self.subtitle = subtitle

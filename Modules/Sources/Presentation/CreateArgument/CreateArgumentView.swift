@@ -67,26 +67,3 @@ struct CreateArgumentView: View {
         CreateArgument()
     })
 }
-
-public enum FibonacciPriority: Int, CaseIterable {
-    case low = 1
-    case medium = 2
-    case high = 3
-    case extreme = 5
-    case highest = 8
-
-    var title: String {
-        switch self {
-        case .low: return "Low - \(self())"
-        case .medium: return "Medium - \(self())"
-        case .high: return "High - \(self())"
-        case .extreme: return "Extreme - \(self())"
-        case .highest: return "Highest - \(self())"
-        }
-    }
-
-    func callAsFunction() -> Int {
-        return self.rawValue
-    }
-
-}

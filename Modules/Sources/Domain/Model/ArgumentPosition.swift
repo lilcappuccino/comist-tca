@@ -1,6 +1,6 @@
 //
 //  ArgumentPosition.swift
-//  
+//
 //
 //  Created by Vadim Marchenko on 11.03.2024.
 //
@@ -32,5 +32,9 @@ public enum ArgumentPosition: Int {
         case .unowned:
             return ""
         }
+    }
+
+    public func callAsFunction() -> Int {
+        self.rawValue
     }
 }

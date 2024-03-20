@@ -9,6 +9,7 @@ import Foundation
 import SwiftData
 import Core
 
+// MARK: - LocalStorageError
 enum LocalStorageError: Error {
     case couldNotFetch
     case couldNotDelete
@@ -32,6 +33,7 @@ enum LocalStorageError: Error {
     }
 }
 
+// MARK: - LocalStorage
 public protocol LocalStorage: AnyObject {
     func fetchQuestions() async throws -> [QuestionEntity]
     func insert(question: QuestionEntity) async throws
@@ -41,6 +43,7 @@ public protocol LocalStorage: AnyObject {
     func deleteArgument(by questionIdentifier: UUID, argumentIdentifier: UUID) async throws
 }
 
+// MARK: - LocalStorageImpl
 public actor LocalStorageImpl: LocalStorage {
 
     private let logger = ComistLogger.localStorage
@@ -48,7 +51,7 @@ public actor LocalStorageImpl: LocalStorage {
 
     public init() { }
 
-    @MainActor @Sendable public func fetchQuestions(by identifier: UUID) async throws -> QuestionEntity {
+    @MainActor public func fetchQuestions(by identifier: UUID) async throws -> QuestionEntity {
         guard let container = await  modelContainer else {
             fatalError("Could not extract model container")
         }
@@ -65,7 +68,7 @@ public actor LocalStorageImpl: LocalStorage {
         }
     }
 
-    @MainActor @Sendable public func fetchQuestions() async throws -> [QuestionEntity] {
+    @MainActor public func fetchQuestions() async throws -> [QuestionEntity] {
         guard let container = await  modelContainer else {
             fatalError("Could not extract model container")
         }
